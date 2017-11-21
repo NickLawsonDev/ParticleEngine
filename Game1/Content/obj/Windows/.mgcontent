@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Profile>Reach</Profile>
+  <Platform>Windows</Platform>
+  <Config />
+  <SourceFiles>
+    <File>C:/Users/Nick/documents/visual studio 2017/Projects/Game1/Game1/Content/Sprites/green_square.png</File>
+    <File>C:/Users/Nick/documents/visual studio 2017/Projects/Game1/Game1/Content/Sprites/purple_square.png</File>
+    <File>C:/Users/Nick/documents/visual studio 2017/Projects/Game1/Game1/Content/Sprites/red_square.png</File>
+    <File>C:/Users/Nick/documents/visual studio 2017/Projects/Game1/Game1/Content/Fonts/Font.spritefont</File>
+    <File>C:/Users/Nick/documents/visual studio 2017/Projects/Game1/Game1/Content/Sprites/GroundSprite.png</File>
+    <File>C:/Users/Nick/documents/visual studio 2017/Projects/Game1/Game1/Content/Sprites/CircleSprite.png</File>
+    <File>C:/Users/Nick/documents/visual studio 2017/Projects/Game1/Game1/Content/Sprites/blackSmoke00.png</File>
+    <File>C:/Users/Nick/documents/visual studio 2017/Projects/Game1/Game1/Content/Sprites/blackSmoke01.png</File>
+    <File>C:/Users/Nick/documents/visual studio 2017/Projects/Game1/Game1/Content/Sprites/blackSmoke02.png</File>
+    <File>C:/Users/Nick/documents/visual studio 2017/Projects/Game1/Game1/Content/Sprites/blackSmoke03.png</File>
+    <File>C:/Users/Nick/documents/visual studio 2017/Projects/Game1/Game1/Content/Sprites/blackSmoke04.png</File>
+    <File>C:/Users/Nick/documents/visual studio 2017/Projects/Game1/Game1/Content/Sprites/blackSmoke05.png</File>
+    <File>C:/Users/Nick/documents/visual studio 2017/Projects/Game1/Game1/Content/Sprites/blackSmoke06.png</File>
+    <File>C:/Users/Nick/documents/visual studio 2017/Projects/Game1/Game1/Content/Sprites/blackSmoke07.png</File>
+    <File>C:/Users/Nick/documents/visual studio 2017/Projects/Game1/Game1/Content/Sprites/blackSmoke08.png</File>
+    <File>C:/Users/Nick/documents/visual studio 2017/Projects/Game1/Game1/Content/Sprites/blackSmoke09.png</File>
+    <File>C:/Users/Nick/documents/visual studio 2017/Projects/Game1/Game1/Content/Sprites/blackSmoke10.png</File>
+    <File>C:/Users/Nick/documents/visual studio 2017/Projects/Game1/Game1/Content/Sprites/blackSmoke11.png</File>
+    <File>C:/Users/Nick/documents/visual studio 2017/Projects/Game1/Game1/Content/Sprites/blackSmoke12.png</File>
+    <File>C:/Users/Nick/documents/visual studio 2017/Projects/Game1/Game1/Content/Sprites/blackSmoke13.png</File>
+    <File>C:/Users/Nick/documents/visual studio 2017/Projects/Game1/Game1/Content/Sprites/blackSmoke14.png</File>
+    <File>C:/Users/Nick/documents/visual studio 2017/Projects/Game1/Game1/Content/Sprites/blackSmoke15.png</File>
+    <File>C:/Users/Nick/documents/visual studio 2017/Projects/Game1/Game1/Content/Sprites/blackSmoke16.png</File>
+    <File>C:/Users/Nick/documents/visual studio 2017/Projects/Game1/Game1/Content/Sprites/blackSmoke17.png</File>
+    <File>C:/Users/Nick/documents/visual studio 2017/Projects/Game1/Game1/Content/Sprites/blackSmoke18.png</File>
+    <File>C:/Users/Nick/documents/visual studio 2017/Projects/Game1/Game1/Content/Sprites/blackSmoke19.png</File>
+    <File>C:/Users/Nick/documents/visual studio 2017/Projects/Game1/Game1/Content/Sprites/blackSmoke20.png</File>
+    <File>C:/Users/Nick/documents/visual studio 2017/Projects/Game1/Game1/Content/Sprites/blackSmoke21.png</File>
+    <File>C:/Users/Nick/documents/visual studio 2017/Projects/Game1/Game1/Content/Sprites/blackSmoke22.png</File>
+    <File>C:/Users/Nick/documents/visual studio 2017/Projects/Game1/Game1/Content/Sprites/blackSmoke23.png</File>
+    <File>C:/Users/Nick/documents/visual studio 2017/Projects/Game1/Game1/Content/Sprites/blackSmoke24.png</File>
+    <File>C:/Users/Nick/documents/visual studio 2017/Projects/Game1/Game1/Content/Sprites/IDR_GIF2.png</File>
+  </SourceFiles>
+</SourceFileCollection>
