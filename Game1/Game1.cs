@@ -4,7 +4,6 @@ using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using VelcroPhysics.Utilities;
 
 namespace Game1
 {
@@ -14,15 +13,19 @@ namespace Game1
         private SpriteBatch _SpriteBatch;
         private ParticleEngine _ParticleEngine;
         private FrameCounter _FrameCounter;
-        private Random _Rand;
+        private Random _Random;
+        private Quadtree quad;
+
+        private const int SCREEN_WIDTH = 800;
+        private const int SCREEN_HEIGHT = 800;
 
 
         public Game1()
         {
             _Graphics = new GraphicsDeviceManager(this)
             {
-                PreferredBackBufferHeight = 800,
-                PreferredBackBufferWidth = 800
+                PreferredBackBufferHeight = SCREEN_HEIGHT,
+                PreferredBackBufferWidth = SCREEN_WIDTH
             };
             Content.RootDirectory = "Content";
         }
@@ -37,8 +40,6 @@ namespace Game1
 
         protected override void LoadContent()
         {
-            _SpriteBatch = new SpriteBatch(GraphicsDevice);
-
             List<Texture2D> textures = new List<Texture2D>();
             //textures.Add(Content.Load<Texture2D>("Sprites/blackSmoke00"));
             //textures.Add(Content.Load<Texture2D>("Sprites/blackSmoke01"));
@@ -65,9 +66,16 @@ namespace Game1
             //textures.Add(Content.Load<Texture2D>("Sprites/blackSmoke22"));
             //textures.Add(Content.Load<Texture2D>("Sprites/blackSmoke23"));
             //textures.Add(Content.Load<Texture2D>("Sprites/blackSmoke24"));
-            textures.Add(Content.Load<Texture2D>("Sprites/IDR_GIF2"));
-            _ParticleEngine = new ParticleEngine(textures, new Vector2(400, 240));
-            _Rand = new Random();
+            textures.Add(Content.Load<Texture2D>("Sprites/red_square"));
+
+            _Random = new Random();
+            _SpriteBatch = new SpriteBatch(GraphicsDevice);
+            quad = new Quadtree(0, new Rectangle(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT));
+            quad.CreateTest();
+
+            _ParticleEngine = new ParticleEngine();
+            _ParticleEngine.GenerateNewEmitter(500, textures, new Vector2(SCREEN_WIDTH/2,SCREEN_HEIGHT/2), ParticleEmitter.EmitterTypes.Sequential);
+            _ParticleEngine.GenerateNewEmitter(_Random.Next(0, 500), textures, new Vector2(SCREEN_WIDTH / 2, SCREEN_HEIGHT/2 + 200), ParticleEmitter.EmitterTypes.Sequential);
 
             _FrameCounter = new FrameCounter();
         }
@@ -81,12 +89,11 @@ namespace Game1
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            _ParticleEngine.EmitterLocation = new Vector2(Mouse.GetState().X,Mouse.GetState().Y);
             _ParticleEngine.Update(gameTime);
 
             var deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
             _FrameCounter.Update(deltaTime);
-            var fps = $"FPS: {_FrameCounter.AverageFramesPerSecond}, Particles: {_ParticleEngine.NumberOfParticles}";
+            var fps = $"FPS: {_FrameCounter.AverageFramesPerSecond}, Particles: {_ParticleEngine.TotalNumberOfParticles}";
             this.Window.Title = fps;
 
             base.Update(gameTime);
@@ -94,8 +101,16 @@ namespace Game1
 
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.Black);
+            GraphicsDevice.Clear(Color.Cornsilk);
             _SpriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null);
+
+//#if DEBUG
+//            foreach(var node in quad._Nodes)
+//            {
+//                if(node != null)
+//                    _SpriteBatch.Draw(Content.Load<Texture2D>("Sprites/red_square"), new Rectangle(node._Bounds.X, node._Bounds.Y, node._Bounds.Width, node._Bounds.Height), new Color(255, 255, 255));
+//            }
+//#endif
 
             _ParticleEngine.Draw(_SpriteBatch);
 

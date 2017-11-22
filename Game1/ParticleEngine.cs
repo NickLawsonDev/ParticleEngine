@@ -10,64 +10,45 @@ namespace Game1
 {
     public class ParticleEngine
     {
-        private Random random;
-        private List<Particle> particles;
-        private List<Texture2D> textures;
-
-        public Vector2 EmitterLocation { get; set; }
-
-        public int NumberOfParticles { get; private set; }
-        
-        public ParticleEngine(List<Texture2D> textures, Vector2 location)
+        public int TotalNumberOfParticles
         {
-            EmitterLocation = location;
-            this.textures = textures;
-            this.particles = new List<Particle>();
-            random = new Random();
+            get
+            {
+                var temp = 0;
+                _UsedEmitters.ToList().ForEach(a => temp += a.TotalNumberOfParticles);
+                _FreeEmitters.ToList().ForEach(a => temp += a.TotalNumberOfParticles);
+                return temp;
+            }
+            private set { TotalNumberOfParticles = value; }
         }
 
-        private Particle GenerateNewParticle(GameTime gameTime)
+        private LinkedList<ParticleEmitter> _UsedEmitters { get; set; }
+        private LinkedList<ParticleEmitter> _FreeEmitters { get; set; }
+        
+        public ParticleEngine()
         {
-            Texture2D texture = textures[random.Next(textures.Count)];
-            Vector2 position = EmitterLocation;
+            _UsedEmitters = new LinkedList<ParticleEmitter>();
+            _FreeEmitters = new LinkedList<ParticleEmitter>();
+        }
 
-            Vector2 velocity = new Vector2(90f, (float)random.NextDouble(-210D, 800D));
-            Vector2 acceleration = new Vector2(10f, 10f);
-            float angle = 0;
-            float angularVelocity = 0.1f * (float)(random.NextDouble() * 2 - 1);
-            Color color = new Color((float)random.NextDouble(0D, 255D), (float)random.NextDouble(0D,255D),0);
-            float size = (float)random.NextDouble();
-            int ttl = 1200 + random.Next(40);
-            NumberOfParticles++;
-
-            return new Particle(texture, position, velocity, acceleration, angle, angularVelocity, new Color(0, 102, 204), size, ttl);
+        public void GenerateNewEmitter(int numberOfParticles, List<Texture2D> textures, Vector2 position, ParticleEmitter.EmitterTypes emitterType = ParticleEmitter.EmitterTypes.None)
+        {
+            _UsedEmitters.AddLast(new ParticleEmitter(numberOfParticles, textures, position, emitterType));
         }
 
         public void Update(GameTime gameTime)
         {
-            int total = 10;
-            for(int i = 0; i < total; i++)
+            foreach(var emitter in _UsedEmitters)
             {
-                particles.Add(GenerateNewParticle(gameTime));
-            }
-
-            for(int particle = 0; particle < particles.Count; particle++)
-            {
-                particles[particle].Update(gameTime);
-                if(particles[particle].TTL <= 0)
-                {
-                    particles.RemoveAt(particle);
-                    particle--;
-                    NumberOfParticles--;
-                }
+                emitter.Update(gameTime);
             }
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            for (int index = 0; index < particles.Count; index++)
+            foreach(var emitter in _UsedEmitters)
             {
-                particles[index].Draw(spriteBatch);
+                emitter.Draw(spriteBatch);
             }
         }
     }

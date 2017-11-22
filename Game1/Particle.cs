@@ -20,10 +20,17 @@ namespace Game1
         public Color Color { get; set; }
         public float Size { get; set; }
         public int TTL { get; set; } //Time to live
-        public AABBCollision AABB { get; set; }
+        public bool IsInUse { get; set; }
 
-        public Particle(Texture2D texture, Vector2 position, Vector2 velocity, Vector2 acceleration, float angle, float angularVelocity, Color color, float size, int ttl)
+        private ParticleEmitter _Emitter;
+        private Random _Random;
+
+        public Particle(ParticleEmitter emitter, Texture2D texture, Vector2 position, Vector2 velocity, Vector2 acceleration, float angle, float angularVelocity, Color color, float size, int ttl)
         {
+            _Emitter = emitter;
+            _Random = new Random();
+
+            IsInUse = true;
             Texture = texture;
             Position = position;
             Velocity = velocity;
@@ -51,10 +58,10 @@ namespace Game1
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            Rectangle sourceRectangle = new Rectangle(0, 0, Texture.Width, Texture.Height);
+            var sourceRectangle = new Rectangle(0, 0, Texture.Width, Texture.Height);
             Vector2 origin = new Vector2(Texture.Width / 2, Texture.Height / 2);
-            if(Color != null)
-                spriteBatch.Draw(Texture, Position, sourceRectangle, Color, Angle, origin, Size, SpriteEffects.None, 0f);
+
+            spriteBatch.Draw(Texture, Position, sourceRectangle, Color, Angle, origin, Size, SpriteEffects.None, 0f);
         }
     }
 }
