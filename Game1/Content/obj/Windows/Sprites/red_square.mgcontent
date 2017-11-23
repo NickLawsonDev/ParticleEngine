@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SourceFile>C:/Users/Nick/documents/visual studio 2017/Projects/Game1/Game1/Content/Sprites/red_square.png</SourceFile>
-  <SourceTime>2017-11-19T14:48:55.8870459-05:00</SourceTime>
+  <SourceTime>2017-11-23T11:12:49.0406891-05:00</SourceTime>
   <DestFile>C:/Users/Nick/documents/visual studio 2017/Projects/Game1/Game1/Content/bin/Windows/Sprites/red_square.xnb</DestFile>
-  <DestTime>2017-11-20T23:44:44.6193247-05:00</DestTime>
+  <DestTime>2017-11-23T11:12:53.0421053-05:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2017-03-01T10:05:36-05:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

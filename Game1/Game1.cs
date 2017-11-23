@@ -66,7 +66,7 @@ namespace Game1
             //textures.Add(Content.Load<Texture2D>("Sprites/blackSmoke22"));
             //textures.Add(Content.Load<Texture2D>("Sprites/blackSmoke23"));
             //textures.Add(Content.Load<Texture2D>("Sprites/blackSmoke24"));
-            textures.Add(Content.Load<Texture2D>("Sprites/red_square"));
+            textures.Add(Content.Load<Texture2D>("Sprites/particle_square"));
 
             _Random = new Random();
             _SpriteBatch = new SpriteBatch(GraphicsDevice);
@@ -101,16 +101,18 @@ namespace Game1
 
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.Cornsilk);
+            GraphicsDevice.Clear(Color.White);
             _SpriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null);
 
-//#if DEBUG
-//            foreach(var node in quad._Nodes)
-//            {
-//                if(node != null)
-//                    _SpriteBatch.Draw(Content.Load<Texture2D>("Sprites/red_square"), new Rectangle(node._Bounds.X, node._Bounds.Y, node._Bounds.Width, node._Bounds.Height), new Color(255, 255, 255));
-//            }
-//#endif
+#if DEBUG
+            var blank = new Texture2D(GraphicsDevice, 1, 1);
+            blank.SetData(new Color[] { Color.White });
+            foreach (var node in quad._Nodes)
+            {
+                if (node != null)
+                    _SpriteBatch.Draw(Content.Load<Texture2D>("Sprites/quadtree_square"), new Rectangle(node._Bounds.X, node._Bounds.Y, node._Bounds.Width, node._Bounds.Height), new Color(255, 255, 255));
+            }
+#endif
 
             _ParticleEngine.Draw(_SpriteBatch);
 

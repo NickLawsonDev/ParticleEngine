@@ -55,3 +55,5 @@ C:\Users\Nick\documents\visual studio 2017\Projects\Game1\Game1\bin\Windows\x86\
 C:\Users\Nick\documents\visual studio 2017\Projects\Game1\Game1\bin\Windows\x86\Debug\Content\Sprites\blackSmoke23.xnb
 C:\Users\Nick\documents\visual studio 2017\Projects\Game1\Game1\bin\Windows\x86\Debug\Content\Sprites\blackSmoke24.xnb
 C:\Users\Nick\documents\visual studio 2017\Projects\Game1\Game1\bin\Windows\x86\Debug\Content\Sprites\IDR_GIF2.xnb
+C:\Users\Nick\documents\visual studio 2017\Projects\Game1\Game1\bin\Windows\x86\Debug\Content\Sprites\particle_square.xnb
+C:\Users\Nick\documents\visual studio 2017\Projects\Game1\Game1\bin\Windows\x86\Debug\Content\Sprites\quadtree_square.xnb

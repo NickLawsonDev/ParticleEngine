@@ -5,8 +5,6 @@
   <Config />
   <SourceFiles>
     <File>C:/Users/Nick/documents/visual studio 2017/Projects/Game1/Game1/Content/Sprites/green_square.png</File>
-    <File>C:/Users/Nick/documents/visual studio 2017/Projects/Game1/Game1/Content/Sprites/purple_square.png</File>
-    <File>C:/Users/Nick/documents/visual studio 2017/Projects/Game1/Game1/Content/Sprites/red_square.png</File>
     <File>C:/Users/Nick/documents/visual studio 2017/Projects/Game1/Game1/Content/Fonts/Font.spritefont</File>
     <File>C:/Users/Nick/documents/visual studio 2017/Projects/Game1/Game1/Content/Sprites/GroundSprite.png</File>
     <File>C:/Users/Nick/documents/visual studio 2017/Projects/Game1/Game1/Content/Sprites/CircleSprite.png</File>
@@ -36,5 +34,7 @@
     <File>C:/Users/Nick/documents/visual studio 2017/Projects/Game1/Game1/Content/Sprites/blackSmoke23.png</File>
     <File>C:/Users/Nick/documents/visual studio 2017/Projects/Game1/Game1/Content/Sprites/blackSmoke24.png</File>
     <File>C:/Users/Nick/documents/visual studio 2017/Projects/Game1/Game1/Content/Sprites/IDR_GIF2.png</File>
+    <File>C:/Users/Nick/documents/visual studio 2017/Projects/Game1/Game1/Content/Sprites/particle_square.png</File>
+    <File>C:/Users/Nick/documents/visual studio 2017/Projects/Game1/Game1/Content/Sprites/quadtree_square.png</File>
   </SourceFiles>
 </SourceFileCollection>
